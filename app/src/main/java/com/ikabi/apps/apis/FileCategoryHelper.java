@@ -1,8 +1,10 @@
 package com.ikabi.apps.apis;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore.Audio;
 import android.provider.MediaStore.Files;
 import android.provider.MediaStore.Files.FileColumns;
@@ -21,6 +23,9 @@ import java.io.FilenameFilter;
 import java.util.HashMap;
 import java.util.Iterator;
 
+/**
+ *
+ */
 public class FileCategoryHelper {
 
 	private FileCategoryType mCategoryType;
@@ -67,7 +72,7 @@ public class FileCategoryHelper {
 
 	static {
 		addItem(new String[] { "mp4", "wmv", "mpeg", "m4v", "3gp", "3gpp",
-				"3g2", "3gpp2", "asf", "rmvb", "avi" }, FileCategoryType.Video);
+		"3g2", "3gpp2", "asf", "rmvb", "avi" }, FileCategoryType.Video);
 		addItem(new String[] { "jpg", "jpeg", "gif", "png", "bmp", "wbmp" },
 				FileCategoryType.Picture);
 		addItem(new String[] { "mp3", "wma", "wav", "ogg" },
@@ -89,6 +94,8 @@ public class FileCategoryHelper {
 			FileCategoryType.Doc, FileCategoryType.Zip, FileCategoryType.Apk,
 			FileCategoryType.Favorite, FileCategoryType.Other };
 
+
+    //构造函数
 
 	public FileCategoryHelper(Context context) {
 		mContext = context;
@@ -234,6 +241,7 @@ public class FileCategoryHelper {
 	*获取分类文件信息
 	*/
 
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public void refreshCategoryInfo() {
 		// clear
 		for (FileCategoryType fc : sCategories) {
@@ -281,7 +289,7 @@ public class FileCategoryHelper {
 	}
 
 	/*
-	 * ????????????Uri
+	 * 根据文件类型获取URI
 	 */
 	private Uri getContentUriByCategory(FileCategoryType cat) {
 		Uri uri;
@@ -310,7 +318,7 @@ public class FileCategoryHelper {
 	}
 
 	/*
-	 * ?????????
+	 * 获取排序语法
 	 */
 	private String buildSortOrder(SortMethod sort) {
 		String sortOrder = null;
@@ -358,8 +366,7 @@ public class FileCategoryHelper {
 		StringBuilder selection = new StringBuilder();
 		Iterator<String> iter = FileUtil.sDocMimeTypesSet.iterator();
 		while (iter.hasNext()) {
-			selection.append("(" + FileColumns.MIME_TYPE + "=='" + iter.next()
-					+ "') OR ");
+			selection.append("(" + FileColumns.MIME_TYPE + "=='").append(iter.next()).append("') OR ");
 		}
 		return selection.substring(0, selection.lastIndexOf(")") + 1);
 	}
