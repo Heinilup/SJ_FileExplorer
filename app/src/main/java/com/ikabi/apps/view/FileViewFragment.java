@@ -103,7 +103,6 @@ public class FileViewFragment extends SherlockFragment implements
 		// TODO Auto-generated method stub
 		mActivity = (MainActivity) getActivity();
 		mActivity.setFileViewFragment(this);
-
 		setHasOptionsMenu(true);
 		mRootView = inflater.inflate(R.layout.file_explorer_list, container,
 				false);

@@ -170,7 +170,7 @@
     <string name="create_folder_name">文件夹名称</string>
     <string name="create_file_name">文件名称</string>
     <string name="create_photo_name">照片名称</string>
-    <string name="my_device">SJ手机文件管理</string>
+    <string name="my_device">浏览文件管理器</string>
     <string name="star">已加星标</string>
     <string name="wifi">Wi-Fi远程管理</string>
     <string name="category">分类查看</string>
@@ -238,7 +238,7 @@
     <string name="Super_Compass">终极指南针</string>
     <string name="Ringtones">手机铃声</string>
     <string name="notif_text">远程管理服务正在运行   %1$s</string>
-    <string name="about_dlg_title">关于 SE文件管理器</string>
+    <string name="about_dlg_title">关于SJ文件管理器</string>
     <string name="about_dlg_message"><b>简介：</b> 关于 SJ文件管理器(SJ) 允许在您的 Android设备上进行文件操作。\n\n\
         <b>维护：</b> zou (seolop@gmail.com)\n\n
         <b>编译：</b> SJ (shuangjun.zou@sim.com)\n\n
@@ -253,5 +253,6 @@
     <string name="file_photo">照片</string>
     <string name="favorite1">收藏夹</string>
     <string name="fav1">收藏夹</string>
+    <string name="upload_net">网盘同步</string>
 
 </resources>

@@ -109,6 +109,7 @@ public class SlidingMenuFragment extends Fragment implements OnClickListener{
     	document.setOnClickListener(this);
     	zip.setOnClickListener(this);
     	apk.setOnClickListener(this);
+		favo.setOnClickListener(this);
     
     	showFileNum();
     	return menu;
@@ -305,10 +306,6 @@ public class SlidingMenuFragment extends Fragment implements OnClickListener{
 		fileNums.put(FileCategoryType.Picture, Long.valueOf(fCategoryInfo.count));
 		imagenum.setText(String.format(sNumFormat, Long.valueOf(fCategoryInfo.count).toString()));
 
-		fCategoryInfo = mFileCategoryHelper.getCategoryInfo(FileCategoryType.Favorite1);
-		fileNums.put(FileCategoryType.Favorite1, Long.valueOf(fCategoryInfo.count));
-		favnum.setText(String.format(sNumFormat, Long.valueOf(fCategoryInfo.count).toString()));
-		
 	}
 	
 

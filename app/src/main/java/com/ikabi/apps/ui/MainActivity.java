@@ -23,6 +23,7 @@ import com.ikabi.apps.utils.MenuUtils.MenuItemType;
 import com.ikabi.apps.view.FileCategoryFragment;
 import com.ikabi.apps.view.FileViewFragment;
 import com.ikabi.apps.view.SlidingMenuFragment;
+import com.ikabi.apps.view.VideoFragment;
 import com.ikabi.apps.widget.CustomDialog;
 
 
@@ -45,6 +46,7 @@ public class MainActivity extends BaseSlidingFragmentActivity {
 	private Fragment mcontentFragment;
 
 	private FileViewFragment mFileViewFragment = null;
+	private VideoFragment mVideoFragment = null;
 
 	private FileCategoryFragment mFileCategoryFragment = null;
 
@@ -209,7 +211,9 @@ public class MainActivity extends BaseSlidingFragmentActivity {
 	public Fragment getSlidingMenuFragment(){
 		return mSlidingMenuFragment;
 	}
-
+	public void setVideoFragment(VideoFragment VideoFragment) {
+		this.mVideoFragment = VideoFragment;
+	}
 	public void setFileViewFragment(FileViewFragment FileViewFragment) {
 		this.mFileViewFragment = FileViewFragment;
 	}
@@ -331,7 +335,7 @@ public class MainActivity extends BaseSlidingFragmentActivity {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		LogUtils.d(LOG_TAG, "Mainactivity onpause");
+		LogUtils.d(LOG_TAG, "MainActivity on pause");
 	}
 
 }

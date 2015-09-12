@@ -21,6 +21,11 @@
         android:name="com.ikabi.apps.view.FtpServerControlFragment"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
+    <fragment
+        android:id="@+id/video_fragment"
+        android:name="com.ikabi.apps.view.VideoFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 
     <View
         android:layout_width="fill_parent"
